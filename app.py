@@ -29,13 +29,12 @@ def predict():
 
     # make prediction
     prediction = grs.predict(file_name)
-
     # remove the .wav file
     os.remove(file_name)
 
     # message to be displayed on the html webpage
     prediction_message = f"""
-    The song is predicted to be in the {prediction} genre.
+    Predicted Genre: {prediction.upper()}
     """
     return render_template("index.html", prediction_text=prediction_message)
 
@@ -46,4 +45,4 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=True)

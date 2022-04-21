@@ -19,16 +19,17 @@ warnings.filterwarnings(action="ignore")
 if __name__ == "__main__":
 
     # load data; set CNN=True to add channel axis to X.
-    X_train, X_valid, X_test, y_train, y_valid, y_test = load_data(JSON_PATH, CNN=True)
+    X_train, X_valid, X_test, y_train, y_valid, y_test = load_data(
+        JSON_PATH, CNN=True)
 
     # create the model
     input_shape = X_train.shape[1:]
     print(f"input shape: {input_shape}")
 
-    ## logistic reg
+    # logistic reg
     # model = create_logreg(input_shape)
 
-    ## CNN
+    # CNN
     model = create_CNN(input_shape)
 
     # compile the model
@@ -41,9 +42,8 @@ if __name__ == "__main__":
     model.summary()
 
     # train the model
-    history = model.fit(
-        X_train, y_train, validation_data=(X_valid, y_valid), epochs=30, batch_size=32
-    )
+    history = model.fit(X_train, y_train, validation_data=(
+        X_valid, y_valid), epochs=30, batch_size=32)
 
     # evaluate the model
     loss, acc = model.evaluate(X_test, y_test, verbose=1)
