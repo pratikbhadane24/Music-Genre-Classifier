@@ -4,8 +4,7 @@ Class file for the genre recognition service to be used by flask.
 
 import librosa
 import numpy as np
-# import tensorflow.keras as keras
-from tensorflow.python import keras
+import tensorflow.keras as keras
 
 from config import (
     DURATION,

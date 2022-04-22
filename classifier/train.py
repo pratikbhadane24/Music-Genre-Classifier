@@ -2,7 +2,7 @@
 import os
 import warnings
 
-from tensorflow.python import keras
+import tensorflow.keras as keras
 
 from config import JSON_PATH, MODEL_DIR
 from load_data import load_data, load_mappings
