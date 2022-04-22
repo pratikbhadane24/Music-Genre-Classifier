@@ -2,7 +2,7 @@
 Script containing modules for creating models.
 """
 
-import tensorflow.keras as keras
+from tensorflow.python import keras
 from config import NUM_GENRES
 
 
